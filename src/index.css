@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1c6fd0;
+  --color-brand-blue: #1c6fd0;
+  --color-brand-teal: #1FA6C9;
+  --color-brand-emerald: #10B981;
+  --color-brand-hover: #175aad;
+  --color-brand-subtle: #1c6fd01a;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, #2680EB 0%, #1FA6C9 50%, #10B981 100%);
+  }
+  .text-brand-gradient {
+    background-image: linear-gradient(135deg, #2680EB 0%, #1FA6C9 50%, #10B981 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+body {
+  background-color: #050505;
+  color: #f0f0f0;
+  font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+html[lang="ar"] body {
+  font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Light theme overrides */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="light"] body {
+  background-color: #F4F6F8;
+  color: #0B1220;
+}
+
+:root[data-theme="light"] :is(.bg-\[\#0F0F0F\], .bg-\[\#0D0D0D\], .bg-\[\#0C0C0C\], .bg-\[\#121814\]) {
+  background-color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] :is(.bg-\[\#050505\], .bg-\[\#080808\], .bg-\[\#060606\]) {
+  background-color: #F4F6F8 !important;
+}
+
+:root[data-theme="light"] :is(.bg-\[\#0A0A0A\], .bg-\[\#141414\], .bg-\[\#121212\], .bg-\[\#1A1A1A\], .bg-\[\#0B0B0B\], .bg-\[\#101010\]) {
+  background-color: #EEF1F4 !important;
+}
+
+/* Text remappings in light mode */
+:root[data-theme="light"] :is(.text-white, .text-\[\#F0F0F0\], .text-\[\#f0f0f0\]) {
+  color: #0B1220 !important;
+}
+:root[data-theme="light"] .text-white\/90 { color: rgba(11,18,32,.92) !important; }
+:root[data-theme="light"] .text-white\/80 { color: rgba(11,18,32,.82) !important; }
+:root[data-theme="light"] .text-white\/75 { color: rgba(11,18,32,.78) !important; }
+:root[data-theme="light"] .text-white\/70 { color: rgba(11,18,32,.72) !important; }
+:root[data-theme="light"] .text-white\/65 { color: rgba(11,18,32,.68) !important; }
+:root[data-theme="light"] .text-white\/60 { color: rgba(11,18,32,.62) !important; }
+:root[data-theme="light"] .text-white\/55 { color: rgba(11,18,32,.58) !important; }
+:root[data-theme="light"] .text-white\/50 { color: rgba(11,18,32,.54) !important; }
+:root[data-theme="light"] .text-white\/45 { color: rgba(11,18,32,.52) !important; }
+:root[data-theme="light"] .text-white\/40 { color: rgba(11,18,32,.48) !important; }
+:root[data-theme="light"] .text-white\/30 { color: rgba(11,18,32,.42) !important; }
+:root[data-theme="light"] .text-white\/20 { color: rgba(11,18,32,.34) !important; }
+:root[data-theme="light"] .text-white\/10 { color: rgba(11,18,32,.26) !important; }
+
+/* Borders & surfaces */
+:root[data-theme="light"] .border-white\/5 { border-color: rgba(11,18,32,.08) !important; }
+:root[data-theme="light"] .border-white\/10 { border-color: rgba(11,18,32,.12) !important; }
+:root[data-theme="light"] .border-white\/20 { border-color: rgba(11,18,32,.18) !important; }
+
+:root[data-theme="light"] .bg-white\/5 { background-color: rgba(11,18,32,.04) !important; }
+:root[data-theme="light"] .bg-white\/10 { background-color: rgba(11,18,32,.07) !important; }
+:root[data-theme="light"] .hover\:bg-white\/5:hover { background-color: rgba(11,18,32,.05) !important; }
+:root[data-theme="light"] .hover\:bg-white\/10:hover { background-color: rgba(11,18,32,.08) !important; }
+
+:root[data-theme="light"] .bg-white.text-black { background-color: #2680EB !important; color: #fff !important; }
+
+/* Keep colored badge text white */
+:root[data-theme="light"] .bg-brand-gradient,
+:root[data-theme="light"] .bg-brand-gradient .text-white,
+:root[data-theme="light"] :is(.bg-brand, .bg-brand-hover, .bg-emerald-500, .bg-emerald-400, .bg-rose-500, .bg-rose-400, .bg-blue-500, .bg-blue-600).text-white {
+  color: #fff !important;
+}
+
+/* Chart text in light vs dark mode explicitly */
+.chart-axis-text-light {
+  fill: #475569 !important;
+}
+.chart-axis-text-dark {
+  fill: #94A3B8 !important;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Raqimo Demo — Real-time Analytics & Reports",
+  "description": "Raqimo real-time business reports and financial analytics with fixed responsive chart columns, theme contrast, and live backend data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
